@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 def diff_date(date2: datetime, date1: datetime = datetime.today()):
-    """This function compares 2 dates, date1 minus date2, and returns the difference in days.
+    """This function compares 2 dates, date1 minus date2, and returns the difference in years.
     Both dates have to be datetime.datetime type.
 
     Args:
@@ -36,9 +36,9 @@ def get_hours(config_variable_name, delta_hours=1, end_hour_delta=0):
         second=0,
         microsecond=0) - timedelta(hours=end_hour_delta)
     start_at = config.get('start_at') or d_start_at
-    end_at = config.get('end_at') or d_end_at
+    ending_at = config.get('end_at') or d_end_at
 
-    return pd.date_range(start_at, end_at, freq='H')
+    return pd.date_range(start_at, ending_at, freq='H')
 
 
 def requests_date_handler(obj):
@@ -52,7 +52,7 @@ def convert_unix_ts(unix_ts: int, ts_format: str = '%Y-%m-%d %H:%M:%S') -> str:
 
     Args:
         unix_ts = Timestamp in unix time format
-        ts_format = Output timestamp format
+        tstamp_format = Output timestamp format
 
     Returns:
         Regular timestamp string
