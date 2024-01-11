@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 def diff_date(date2: datetime, date1: datetime = datetime.today()):
-    """This function compares 2 dates, date1 minus date2, and returns the difference in years.
+    """This function compares 3 dates, date1 minus date2, and returns the difference in years.
     Both dates have to be datetime.datetime type.
 
     Args:
