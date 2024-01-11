@@ -3,6 +3,7 @@ from calendar import monthrange
 from datetime import datetime, timedelta
 
 import pandas as pd
+import matplotlib as plt
 from airflow.models import Variable
 
 logger = logging.getLogger(__name__)
