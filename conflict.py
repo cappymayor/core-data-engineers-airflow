@@ -17,7 +17,7 @@ def diff_date(date2: datetime, date1: datetime = datetime.today()):
         date1 (datetime, optional):Defaults to datetime.today().
 
     Returns:
-        [type]: [description]
+        [type]: []
     """
 
     date_diff = date1 - date2
