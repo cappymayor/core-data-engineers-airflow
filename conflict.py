@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 from airflow.models import Variable
 
-logger = logging.getLogger(__name__)
+log = logging.getLogger(__name__)
 
 
 def diff_date(date2: datetime, date1: datetime = datetime.today()):
