@@ -66,7 +66,7 @@ def get_last_day_of_month(month: str, year: str) -> str:
 
     Args:
         month (str): format 'mm'
-        year (str): format 'yyyy'
+        year (str): format 'yyym'
 
     Returns:
         str: last day of the month
