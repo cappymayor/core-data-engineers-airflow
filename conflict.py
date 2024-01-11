@@ -22,7 +22,7 @@ def diff_date(date2: datetime, date1: datetime = datetime.today()):
 
     date_diff = date1 - date2
 
-    return date_diff.days
+    return date_diff
 
 
 def get_hours(config_variable_name, delta_hours=1, end_hour_delta=0):
@@ -35,10 +35,10 @@ def get_hours(config_variable_name, delta_hours=1, end_hour_delta=0):
         minute=0,
         second=0,
         microsecond=0) - timedelta(hours=end_hour_delta)
-    start_at = config.get('start_at') or d_start_at
+    starting_at = config.get('start_at') or d_start_at
     ending_at = config.get('end_at') or d_end_at
 
-    return pd.date_range(start_at, ending_at, freq='H')
+    return pd.date_range(starting_at, ending_at, freq='H')
 
 
 def requests_date_handler(obj):
@@ -71,4 +71,4 @@ def get_last_day_of_month(month: str, year: str) -> str:
     Returns:
         str: last day of the month
     """
-    return str(monthrange(int(year), int(month))[1])
+    return str(monthrange(str(year), int(month))[1])
