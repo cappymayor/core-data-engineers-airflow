@@ -1,7 +1,4 @@
-import logging 
-
-
-
+import logging
 import time
 
 x = 5
