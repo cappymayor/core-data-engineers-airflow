@@ -27,3 +27,6 @@ jobs:
 
       - name: Running isort.
         run: isort --check-only  .
+
+      - name: Running flake8
+        run: flake8 .
