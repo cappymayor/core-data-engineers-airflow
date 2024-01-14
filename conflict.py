@@ -1,7 +1,5 @@
-import logging
-import time
-
-x = 5
-print(x)
+def new():
+    print("how are you")
+new()
 
 
