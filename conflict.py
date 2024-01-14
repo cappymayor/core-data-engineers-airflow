@@ -1,10 +1,10 @@
-import logging
+
 from calendar import monthrange
 from datetime import datetime, timedelta
-
+import logging
 import pandas as pd
 from airflow.models import Variable
-
+import pandas as pd
 logger = logging.getLogger(__name__)
 
 
