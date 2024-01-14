@@ -4,11 +4,7 @@ on:
   push:
     branches:
       - "**" # matches every branch
-
-defaults:
-  run:
-    shell: bash
-
+      
 jobs:
   lint:
     name: checkout
