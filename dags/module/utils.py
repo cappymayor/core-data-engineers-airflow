@@ -3,6 +3,7 @@ from datetime import datetime
 
 def customer_age():
     birth_year = 1980
+
     def calculate_age(birth_year, current_year):
         current_year = datetime.now().year
         return current_year - birth_year
