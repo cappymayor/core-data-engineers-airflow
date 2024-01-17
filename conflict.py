@@ -3,19 +3,20 @@ from calendar import monthrange
 from datetime import datetime, timedelta
 
 import pandas as pd
-import matplotlib as plt
 from airflow.models import Variable
 
 logger = logging.getLogger(__name__)
 
 
 def diff_date(date2: datetime, date1: datetime = datetime.today()):
-    """This function compares 2 dates, date1 minus date2, and returns the difference in years.
+    """This function compares 2 dates, date1 minus date2,/
+    and returns the difference in years.
     Both dates have to be datetime.datetime type.
 
     Args:
         date2 (datetime)
-        date1 (datetime, optional):Defaults to datetime.today().
+        date1 (datetime, optional):/
+        Defaults to datetime.today().
 
     Returns:
         [type]: [description]
@@ -27,7 +28,8 @@ def diff_date(date2: datetime, date1: datetime = datetime.today()):
 
 
 def get_hours(config_variable_name, delta_hours=1, end_hour_delta=0):
-    config = Variable.get(config_variable_name, deserialize_json=True, default_var={})
+    config = Variable.get(config_variable_name,
+                          deserialize_json=True, default_var={})
     d_start_at = datetime.utcnow().replace(
         minute=0,
         second=0,
@@ -48,7 +50,8 @@ def requests_date_handler(obj):
 
 
 def convert_unix_ts(unix_ts: int, ts_format: str = '%Y-%m-%d %H:%M:%S') -> str:
-    """Given a unix timstamp, this function converts it to the desired string using datetime lib
+    """Given a unix timstamp, /
+    this function converts it to the desired string using datetime lib
     Default is YYYY-MM-DD HH:MM:SS
 
     Args:
@@ -63,7 +66,8 @@ def convert_unix_ts(unix_ts: int, ts_format: str = '%Y-%m-%d %H:%M:%S') -> str:
 
 
 def get_last_day_of_month(month: str, year: str) -> str:
-    """Returns the last day of the month based on the year and the month passed as arguments.
+    """Returns the last day of the month/
+    based on the year and the month passed as arguments.
 
     Args:
         month (str): format 'mm'
