@@ -1,12 +1,11 @@
 from datetime import datetime
 
 
-def customer_age():
-    birth_year = 1980
-
+def customer_age(birth_year):
     def calculate_age(birth_year, current_year):
         current_year = datetime.now().year
-        return current_year - birth_year
+        age = current_year - birth_year
+        return age
 
     try:
         birth_year = int(birth_year)

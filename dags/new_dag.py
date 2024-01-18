@@ -10,7 +10,8 @@ default_args = {
     'start_date': datetime.datetime(2021, 12, 15),
     'retries': 5,
     'retry_delay': datetime.timedelta(seconds=10),
-    'execution_timeout': datetime.timedelta(minutes=10)
+    'execution_timeout': datetime.timedelta(minutes=10),
+    'birth_year': 1980
 }
 
 dag = DAG(
@@ -22,11 +23,12 @@ dag = DAG(
     catchup=False
 )
 
-
 first = PythonOperator(
     dag=dag,
-    task_id='customer_age',
-    python_callable=customer_age,  # corrected function call
-    provide_context=True  # provide context to the callable function
+    task_id='print_customer_age',
+    python_callable=lambda **kwargs: print(f"The age of the customer is:\
+        {customer_age(kwargs['dag_run'].conf.get('birth_year', 1980))}"),
+    provide_context=True,
 )
+
 customer_age
