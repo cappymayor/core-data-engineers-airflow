@@ -4,7 +4,6 @@ from utils.fakers_operations import profile_data_generator
 
 
 def data_extract_to_s3():
-
     wr.s3.to_parquet(
                     df=profile_data_generator(200),
                     path="s3://faker-raw-data/user_profile/",
